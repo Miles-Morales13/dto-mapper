@@ -11,7 +11,7 @@
   ],
   "homepage": "https://github.com/vklymniuk/dto-mapper",
   "require": {
-    "php": "^7.2",
+    "php": "^7.4",
     "ocramius/generated-hydrator": "^3.1"
   },
   "require-dev": {
