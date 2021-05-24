@@ -11,6 +11,7 @@ use DataMapper\Strategy\XPathGetterStrategy;
 use DataMapper\Type\TypeResolver;
 
 use Tests\DataFixtures\Dto\DeepValueDto;
+use Tests\DataFixtures\Model\Deep;
 use Tests\DataFixtures\Model\Inner;
 use Tests\DataFixtures\Model\Outer;
 use Tests\DataFixtures\Traits\BaseMappingTrait;
@@ -65,7 +66,8 @@ class ChainStrategyTest extends TestCase
 
         $dto = $hydrator->hydrate($outer, DeepValueDto::class);
         $this->assertEquals($dto->getFound(), $outer->getInner()->getDeep()->getDeepValue());
-        $this->assertContains($searchString, $dto->getInner());
+
+        $this->assertEquals(Deep::STR . $searchString, $dto->getInner());
         $this->assertEquals($dto->getDestinationGetterTarget(), $outer->getTestGetter());
         $this->assertEquals($dto->getCopiedByName(), $outer->getCopiedByName());
     }

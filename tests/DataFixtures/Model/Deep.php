@@ -7,7 +7,13 @@ namespace Tests\DataFixtures\Model;
  */
 class Deep
 {
-    private $searchValue = 'find me';
+    public const STR = 'find me';
+
+    /**
+     * @var string
+     */
+    private $searchValue = self::STR;
+
     /**
      * @return string
      */

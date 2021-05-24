@@ -8,6 +8,7 @@ use DataMapper\Strategy\ClosureStrategy;
 use DataMapper\Type\TypeResolver;
 
 use Tests\DataFixtures\Dto\DeepValueDto;
+use Tests\DataFixtures\Model\Deep;
 use Tests\DataFixtures\Model\Inner;
 use Tests\DataFixtures\Model\Outer;
 use Tests\DataFixtures\Traits\BaseMappingTrait;
@@ -40,7 +41,7 @@ class ClosureStrategyTest extends TestCase
 
         /** @var DeepValueDto $dto */
         $dto = $hydrator->hydrate($outer, DeepValueDto::class);
-        $this->assertContains($searchString, $dto->getInner());
+        $this->assertEquals(Deep::STR . $searchString, $dto->getInner());
         $this->assertEquals($dto->getCopiedByName(), $outer->getCopiedByName());
     }
 
