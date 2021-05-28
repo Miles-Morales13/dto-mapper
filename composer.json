@@ -1,5 +1,5 @@
 {
-  "name": "vklymniuk/dto-mapper",
+  "name": "symfony-ext/dto-mapper",
   "type": "library",
   "description": "Data mapper library, uses code generator for objects processing.",
   "license": "MIT",
