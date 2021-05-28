@@ -14,7 +14,7 @@ It's a perfect choice for throwing away dummy and heavy reflection based mappers
 The suggested installation method is via [composer](https://getcomposer.org/):
 
 ```sh
-php composer.phar require vklymniuk/dto-mapper
+php composer.phar require symfony-ext/dto-mapper
 ```
 
 ## Documentation
